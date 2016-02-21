@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="ani" default="compile" basedir=".">
+<project name="ani" default="run" basedir=".">
 
 	<target name="delete">
 	<delete dir="bin"/>
@@ -22,15 +22,15 @@
 	</target>
 	
 	<target name="copy" depends="create">
-	<copydir dest="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\src" src="C:\Users\LENOVO\Desktop\work\anirudh\src">
+	<copydir dest="D:\anirudh\work\repo\anirudh\ant\build\src" src="D:\anirudh\work\repo\anirudh\src">
 	</copydir>
-	<copy todir="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\lib" overwrite="true">
-	<fileset dir="C:\Users\LENOVO\Desktop\work\anirudh\lib" ></fileset>
+	<copy todir="D:\anirudh\work\repo\anirudh\ant\build\lib" overwrite="true">
+	<fileset dir="D:\anirudh\work\repo\anirudh\lib" ></fileset>
 	</copy>
 	</target>
 	
 	<target name="compile" depends="copy">
-	<javac classpathref="classpath" includeantruntime="true" srcdir="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\src" destdir="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\bin">
+	<javac classpathref="classpath" includeantruntime="true" srcdir="D:\anirudh\work\repo\anirudh\ant\build\src" destdir="D:\anirudh\work\repo\anirudh\ant\build\bin">
 	</javac>
 	</target>
 	
