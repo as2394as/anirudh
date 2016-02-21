@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ani" default="compile" basedir=".">
+
+	<target name="delete">
+	<delete dir="bin"/>
+	<delete dir="src"/>
+	<delete dir="lib"/>
+	<delete dir="test-output"/>
+	</target>
+	
+	<path id="classpath">
+	
+	<pathelement location="lib\junit-4.10.jar"></pathelement>
+	<pathelement location="bin"></pathelement>
+	</path>
+	
+	<target name="create" depends="delete">
+	<mkdir dir="bin"/>
+	<mkdir dir="src"/>
+	<mkdir dir="lib"/>
+	<mkdir dir="test-output"/>
+	</target>
+	
+	<target name="copy" depends="create">
+	<copydir dest="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\src" src="C:\Users\LENOVO\Desktop\work\anirudh\src">
+	</copydir>
+	<copy todir="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\lib" overwrite="true">
+	<fileset dir="C:\Users\LENOVO\Desktop\work\anirudh\lib" ></fileset>
+	</copy>
+	</target>
+	
+	<target name="compile" depends="copy">
+	<javac classpathref="classpath" includeantruntime="true" srcdir="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\src" destdir="C:\Users\LENOVO\Desktop\work\anirudh\ant\build\bin">
+	</javac>
+	</target>
+	
+	<target name="run" depends="compile">
+		<junit haltonfailure="false" printsummary="true">
+			<classpath refid="classpath"></classpath>
+			<batchtest haltonfailure="false" fork="true" todir="test-output">
+				<fileset dir="bin">
+				
+				</fileset>
+			</batchtest>
+			<formatter type="xml"/>
+		</junit>
+	</target>
+
+</project>
