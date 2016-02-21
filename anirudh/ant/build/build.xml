@@ -10,7 +10,7 @@
 	
 	<path id="classpath">
 	
-	<pathelement location="lib\junit-4.10.jar"></pathelement>
+	<pathelement location="D:\anirudh\work\repo\anirudh\lib\junit-4.10.jar"></pathelement>
 	<pathelement location="bin"></pathelement>
 	</path>
 	
